@@ -20,7 +20,7 @@ library(flextable)
 install.packages("formattable")
 library(formattable)
 library(officer)
-setwd("~/Documents/UCL/UCL-M1/Approf/eih_fiab/exctracted_data")
+setwd("~/Documents/UCL/UCL-M1/Approf/eih_fiab/eih_fiab/exctracted_data")
 dat_ppt_fiab <- read_excel("ppt_fiab.xlsx")
 dat_mdc_ppt_fiab <- dat_ppt_fiab %>% 
   mutate ( mdc95 = sem*1.96*sqrt(2)) %>% mutate(mdc95_mean = mdc95/((mean_1+mean_2)/2)) %>%

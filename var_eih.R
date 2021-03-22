@@ -16,7 +16,7 @@ library(flextable)
 library(officer)
 library(data.table)
 
-setwd("~/Documents/UCL/UCL-M1/Approf/eih_fiab/exctracted_data")
+setwd("~/Documents/UCL/UCL-M1/Approf/eih_fiab/eih_fiab/exctracted_data")
 var_eih <- read_excel("var_eih.xlsx")
 
 
