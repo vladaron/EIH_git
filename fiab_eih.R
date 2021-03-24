@@ -7,8 +7,9 @@ library(xlsx)
 library(readxl)
 install.packages("flextable")
 library(flextable)
-setwd("~/Documents/UCL/UCL-M1/Approf/eih_fiab/eih_fiab/exctracted_data")
-dat_eih <- read_excel("eih_fiab.xlsx")
+library(googlesheets4)
+
+dat_eih <- read_sheet("https://docs.google.com/spreadsheets/d/1W9XiSLdRMn9wmZ7vLMckzIeHSUxis5JfnHaW_Qj0F3Y/edit#gid=0")
 dat_mdc_eih <- dat_eih %>% mutate (mdc95_abs = SEM_abs*1.96*sqrt(2), mdc95_rel = SEM_rel*1.96*sqrt(2)) %>% mutate(mdc95_abs_mean = mdc95_abs/((mean_pré_1+mean_pré_2)/2))
 str(dat_mdc_eih)
 library(officer)
@@ -38,6 +39,7 @@ table_protocol <- align(table_protocol, i= 1, part = "header", align = "center")
 table_protocol <- set_header_labels(table_protocol,Pop = "Pop & Gender", Modality = "Ex type", Intensity = "Intensity", Duration = "Ex time (min)", Control = "Control", Modality_test = "Test mod", Site = "Site",  rate_ppt = "Rate PPT", number_ppt = "Number PPT", wash_out = "Wash out (wk)") 
 small_border <- fp_border(color = "black", width = 2)
 table_protocol <- border_outer(table_protocol, part="all", border = small_border )
+
 
 ## ppt quad
 dat_eih_quad <- dat_mdc_eih %>% 

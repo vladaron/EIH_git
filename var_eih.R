@@ -1,4 +1,7 @@
 ##import
+install.packages("gdtools", type = "source")
+install.packages("flextable")
+library(flextable)
 library(dplyr)
 library(tidyverse)
 system("java -version")
@@ -10,14 +13,16 @@ library(dplyr)
 install.packages("formattable")
 library(formattable)
 library(tidyr)
-install.packages("gdtools", type = "source")
-install.packages("flextable")
-library(flextable)
 library(officer)
 library(data.table)
+install.packages("googlesheets4")
+library(googlesheets4)
 
-setwd("~/Documents/UCL/UCL-M1/Approf/eih_fiab/eih_fiab/exctracted_data")
-var_eih <- read_excel("var_eih.xlsx")
+
+
+
+var_eih <-read_sheet("https://docs.google.com/spreadsheets/d/129uBLMzbkUx5KM0oPJWo3w-BqQvoa5I-AudbPO2NF58/edit#gid=0")
+
 
 
 ##gender
